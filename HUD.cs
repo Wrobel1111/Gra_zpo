@@ -29,6 +29,10 @@ public partial class HUD : CanvasLayer
 	async public void ShowGameOver()
 	{
 		ShowMessage("Game Over \n Your score: " + GetNode<Label>("ScoreLabel").Text);
+		if (playerName.Equals(""))
+		{
+			playerName = "player";
+		}
 		SaveGame(playerName,int.Parse(GetNode<Label>("ScoreLabel").Text));
 		var messageTimer = GetNode<Timer>("MessageTimer");
 		await ToSignal(messageTimer, Timer.SignalName.Timeout);
