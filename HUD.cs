@@ -80,7 +80,7 @@ public partial class HUD : CanvasLayer
 
 	public void SaveGame(string playerName, int scored)
 	{
-		using var saveGame = FileAccess.Open("user://savegame.json", FileAccess.ModeFlags.ReadWrite);
+		using var saveGame = FileAccess.Open("user://savegame.json", FileAccess.ModeFlags.WriteRead);
 		Score currentScore = new Score(playerName, scored);
 		scores.Add(currentScore);
 		var jsonString = JsonSerializer.Serialize(currentScore);
@@ -88,8 +88,8 @@ public partial class HUD : CanvasLayer
 	}
 	public void LoadSaves()
 	{
-		using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
-		if (!FileAccess.FileExists("user://savegame.save"))
+		using var saveGame = FileAccess.Open("user://savegame.json", FileAccess.ModeFlags.Read);
+		if (!FileAccess.FileExists("user://savegame.json"))
     	{
     	    return;
     	}
