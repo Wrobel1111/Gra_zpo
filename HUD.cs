@@ -2,12 +2,11 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
-#nullable enable
 public partial class HUD : CanvasLayer
 {
 	[Signal]
 	public delegate void StartGameEventHandler();
-	public string? playerName;
+	public string playerName = "";
 	public class Score
 	{
 		public Score(string a, int b)
