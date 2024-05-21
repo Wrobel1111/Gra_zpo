@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://g051lfb7oywa"]
+
+[ext_resource type="FontFile" uid="uid://c8w0f3t4hgu7" path="res://fonts/Xolonium-Regular.ttf" id="2_1nh3x"]
+
+[node name="Node" type="Node2D"]
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_1nh3x")
+theme_override_font_sizes/font_size = 28
+text = "aaa"
+
+[node name="PlayerScore" type="Label" parent="."]
+offset_left = 176.0
+offset_top = 32.0
+offset_right = 320.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_1nh3x")
+theme_override_font_sizes/font_size = 28
+text = "bbb"
+horizontal_alignment = 2
